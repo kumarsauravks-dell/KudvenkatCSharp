@@ -1,0 +1,6 @@
+C:\Users\Kumar\Desktop\Github\KudvenkatC#\IntroductionToCSharp\IntroductionToCSharp\bin\Debug\IntroductionToCSharp.exe.config
+C:\Users\Kumar\Desktop\Github\KudvenkatC#\IntroductionToCSharp\IntroductionToCSharp\bin\Debug\IntroductionToCSharp.exe
+C:\Users\Kumar\Desktop\Github\KudvenkatC#\IntroductionToCSharp\IntroductionToCSharp\bin\Debug\IntroductionToCSharp.pdb
+C:\Users\Kumar\Desktop\Github\KudvenkatC#\IntroductionToCSharp\IntroductionToCSharp\obj\Debug\IntroductionToCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Kumar\Desktop\Github\KudvenkatC#\IntroductionToCSharp\IntroductionToCSharp\obj\Debug\IntroductionToCSharp.exe
+C:\Users\Kumar\Desktop\Github\KudvenkatC#\IntroductionToCSharp\IntroductionToCSharp\obj\Debug\IntroductionToCSharp.pdb

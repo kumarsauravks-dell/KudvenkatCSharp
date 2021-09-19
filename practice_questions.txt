@@ -1,0 +1,5 @@
+Q1. Create a class Program with two Main methods. Prove Main() method is entry point of the application.
+Q2. WAP which takes firstname and lastname as input from the user and write that back to console.
+    Use the following to print:-
+    1. Concatination 2. Place holder syntax
+Q3.  

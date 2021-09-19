@@ -1,0 +1,25 @@
+#Ref Video 1
+- Namespace 
+    - namespace can be used with using keyword like using System;
+    - used to organise our code.
+    - collection of classes, interfaces, structs, enums and delegates.
+
+- Main Method
+    - entry point into the application
+
+- We can write to console using two ways
+    - Concatination
+    - Placeholder syntax
+
+- Built-types
+    - sbyte     -128 to 127
+    - byte      0 to 255
+    - char      U+000 to U+ffff
+    - short     -32768 to 32767
+    - ushort    0 to 65535
+    - int       -2147483648 to 2147483647
+    - uint      0 to 4294967295
+    - long      -9.223.372036854775808 to 9.223.372036854775807
+    - ulong
+
+

@@ -1,0 +1,21 @@
+#1. Introduction
+    - Basic Structure of a c# program.
+    - What is namespace
+    - Purpose of Main Method
+
+#2. Reading and Writing to Console.
+    - Reading from the console.
+    - Writing to the console.
+    - 2 ways to write to console
+        a. Conctination
+        b. Place holder syntax - most preffered
+
+#3. Built-in types in C#
+    - Boolean types - only true or false
+    - Integer types - sbyte, byte , short, ushort, int, uint, long, ulong, char
+    - Floating types - float and double
+    - Decimal Types 
+    - String Type 
+    - Escape Sequence
+    - Verbatin Literal
+
