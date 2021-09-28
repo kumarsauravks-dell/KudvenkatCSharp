@@ -19,3 +19,49 @@
     - Escape Sequence
     - Verbatin Literal
 
+#4. Built-in string type in C#
+    - String type
+
+#5. Common Operators in C#
+    - Assignment Operator =
+    - Arithmetic Operators like +, - , * , / , %
+    - Comparison Operators like ==,!=,>,>=,<,<=
+    - Conditional Operators like &&, ||
+    - Ternary Operator ?:
+    - Null Coalescing Operator ??
+
+#6. Nullable Types in C#
+    - Nullable Types
+    - Null Coalescing Operator ??
+
+#7. Datatype Conversion in C#
+    - Implicit Conversion 
+    - Explicit Conversion
+    - Difference between Parse() & TryParse()
+
+#8. Arrays in C#
+    - Arrays
+    - Advantage and Disadvantage of Arrays
+
+#9. Comments in C#
+    - Single Line Comment
+    - Multiline Comment
+    - Intro to XML documentation Comments
+
+#10. if Statement in C#
+    - if Statement
+    - if else Statement
+    - Difference b/n && and &
+    - Difference b/n || and |
+
+#11. Switch statement in C#
+    - switch statement
+    - break statement
+    - goto statement
+
+#12. Switch statement continued.
+
+
+
+
+

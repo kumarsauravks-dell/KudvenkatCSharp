@@ -31,3 +31,335 @@ class Program
 }
 -------------
 - Solution #3
+using System;
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Min Value is : {0}", int.MinValue);
+        Console.WriteLine("Max Value is : {0}", int.MaxValue);
+
+        Console.WriteLine("Min Value is : {0}", float.MinValue);
+        Console.WriteLine("Max Value is : {0}", float.MaxValue);
+
+        Console.WriteLine("Min Value is : {0}", double.MinValue);
+        Console.WriteLine("Max Value is : {0}", double.MaxValue);
+        Console.ReadKey();
+    }
+}
+------------------
+- Solution #4
+using System;
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("\"Kumar Saurav\"");
+        Console.ReadKey();
+    }
+}
+------------------
+- Solution #5
+using System;
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("One \n Two \n  Three");
+        Console.ReadKey();
+    }
+}
+-------------------
+- Solution #6
+using System;
+class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Kudvenkat\\C#Videos\\Video1.mp4");
+        Console.ReadKey();
+    }
+}
+--------------------
+- Solution #7
+using System;
+class Program
+{
+    public static void Main()
+    {
+        string path = @"Kudvenkat\C#Videos\Video1.mp4";
+        Console.WriteLine(path);
+        Console.ReadKey();
+    }
+}
+-----------------------
+- Solution #8
+    public static void Main()
+    {
+        int Number = 20;
+        bool IsNumber10;
+
+        if (Number == 10)
+        {
+            IsNumber10 = true;
+        }
+        else
+        {
+            IsNumber10 = false;
+        }
+        Console.WriteLine("Number == 10 is {0}", IsNumber10);
+        Console.ReadKey();
+    }
+----------------------------
+- Solution #9
+     public static void Main()
+    {
+        int Number = 10;
+        bool IsNumber10;
+
+        IsNumber10 = Number == 10 ? true : false;
+        Console.WriteLine("Number == 10 is {0}", IsNumber10);
+        Console.ReadKey();
+    }
+------------------------------------
+- Solution #10
+    public static void Main()
+    {
+        bool? AreYouMajor = null;
+        if (AreYouMajor == true)
+        {
+            Console.WriteLine("User is Major");
+        }
+        else if(AreYouMajor==false)
+        {
+            Console.WriteLine("User is not Major");
+        }
+        else
+        {
+            Console.WriteLine("User didn't answered that.");
+        }
+        Console.ReadKey();
+    }
+
+---------------------------------------
+- Solution 11
+    public static void Main()
+    {
+        int? TicketOnSale = null;
+        int AvailableTickets;
+
+        if (TicketOnSale == null)
+        {
+            AvailableTickets = 0;
+        }
+        else
+        {
+            AvailableTickets = TicketOnSale.Value;
+        }
+        Console.WriteLine("Available Tickets : {0}", AvailableTickets);
+        Console.ReadKey();
+    }
+----------------------------------------
+- Solution 12
+    public static void Main()
+    {
+        int? TicketOnSale = 20;
+        int AvailableTickets;
+
+        AvailableTickets = TicketOnSale ?? 0;
+        Console.WriteLine("Available Tickets : {0}", AvailableTickets);
+        Console.ReadKey();
+    }
+------------------------------------------
+- Solution 13
+    public static void Main()
+    {
+        int i = 100;
+        float f;
+        f = i;
+        Console.WriteLine("The value of float value is : {0}", f);
+        Console.ReadKey();
+    }
+-----------------------------------------
+- Solution 14
+    public static void Main()
+    {
+        float f = 25.235f;
+        int i;
+        i = (int)f;
+        //i = Convert.ToInt32(f);
+        Console.WriteLine("The value on integer value is {0}", i);
+        Console.ReadKey();
+    }
+-----------------------------------------
+- Solution 15
+    public static void Main()
+    {
+        string strNumber = "123";
+        int i = int.Parse(strNumber);
+        Console.WriteLine("Parsed value of string is :{0}",i);
+        Console.ReadKey();
+    }
+
+----------------------------------------
+- Solution 16
+    public static void Main()
+    {
+        string strNumber = "123b";
+        int i;
+        bool validNumber= int.TryParse(strNumber, out i);
+        if (validNumber)
+        {
+            Console.WriteLine("Converted string integer value is {0}", i);
+        }
+        else
+        {
+            Console.WriteLine("The string provided is not a valid number");
+        }
+        Console.ReadKey();
+    }
+----------------------------------------------
+- Solution 17
+    public static void Main()
+    {
+        int[] EvenNumbers = new int[3];
+        EvenNumbers[0] = 0;
+        EvenNumbers[1] = 2;
+        EvenNumbers[2] = 4;
+        Console.WriteLine("Second Even Number is : {0}", EvenNumbers[1]);
+        Console.ReadKey();
+    }
+----------------------------------------------
+- Solution 18
+using System;
+class Program
+{
+    public static void Main()
+    {
+        MyClass mc = new MyClass();
+    }
+}
+/// <summary>
+/// This is MyClass documentation
+/// </summary>
+public class MyClass
+{
+    
+}
+----------------------------------------------
+- Solution 19
+    public static void Main()
+    {
+        Console.WriteLine("Please Enter a number between 1 and 3");
+        int UserNumber = int.Parse(Console.ReadLine());
+        if (UserNumber == 1)
+        {
+            Console.WriteLine("You have Entered One");
+        }
+        else if(UserNumber == 2)
+        {
+            Console.WriteLine("You have Entered Two");
+        }
+        else if (UserNumber == 3)
+        {
+            Console.WriteLine("You have Entered Three");
+        }
+        else
+        {
+            Console.WriteLine("You have not entered a number between 1 and 3");
+        }
+        Console.ReadKey();
+    }
+----------------------------------------------------
+- Solution 20
+    public static void Main()
+    {
+        Console.WriteLine("Please Enter a number.");
+        int Number=Convert.ToInt32(Console.ReadLine());
+        if (Number == 10)
+        {
+            Console.WriteLine("You have entered 10");
+        }
+        else if (Number == 20)
+        {
+            Console.WriteLine("You have entered 20");
+        }
+        else if (Number == 30)
+        {
+            Console.WriteLine("You have entered 30");
+        }
+        else
+        {
+            Console.WriteLine("You have neither entered 10 nor 20 nor 30.");
+        }
+        Console.ReadKey();
+    }
+-----------------------------------------------------
+- Solution 21
+    public static void Main()
+    {
+        Console.WriteLine("Please Enter a Number");
+        int Number = int.Parse(Console.ReadLine());
+        switch (Number)
+        {
+            case 10:
+                Console.WriteLine("You have Entered 10");
+                break;
+            case 20:
+                Console.WriteLine("You have Entered 20");
+                break;
+            case 30:
+                Console.WriteLine("You have Entered 30");
+                break;
+            default :
+                Console.WriteLine("You have neither entered 10 nor 20 nor 30");
+                break;
+        }
+        Console.ReadKey();  
+    }
+---------------------------------------------------
+- Solution 22
+    public static void Main()
+    {
+        Console.WriteLine("Please Enter a Number");
+        int Number = int.Parse(Console.ReadLine());
+        switch (Number)
+        {
+            case 10:
+            case 20:
+            case 30:
+                Console.WriteLine("You have Entered {0}",Number);
+                break;
+            default :
+                Console.WriteLine("You have neither entered 10 nor 20 nor 30");
+                break;
+        }
+        Console.ReadKey();  
+    }
+-------------------------------------------------------
+- Solution 23
+    public static void Main()
+    {
+        int TotalCoffeeCost = 0;
+        Console.WriteLine("Which type of coffee do you want?");
+        Console.WriteLine("1-Small , 2-Medium , 3-Large");
+        int UserChoice=int.Parse(Console.ReadLine());
+        switch (UserChoice)
+        {
+            case 1:
+                TotalCoffeeCost += 1;
+                break;
+            case 2:
+                TotalCoffeeCost += 2;
+                break;
+            case 3:
+                TotalCoffeeCost += 3;
+                break;
+            default:
+                Console.WriteLine("Your choice {0} is invalid.",UserChoice);
+                break;                
+        }
+        Console.WriteLine("Thank you for shopping with us.");
+        Console.WriteLine("Your bill amount is : {0}", TotalCoffeeCost);
+        Console.ReadKey();
+    }

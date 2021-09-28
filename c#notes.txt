@@ -1,4 +1,4 @@
-#Ref Video 1
+#Ref Video 1-5
 - Namespace 
     - namespace can be used with using keyword like using System;
     - used to organise our code.
@@ -12,14 +12,83 @@
     - Placeholder syntax
 
 - Built-types
-    - sbyte     -128 to 127
-    - byte      0 to 255
-    - char      U+000 to U+ffff
-    - short     -32768 to 32767
-    - ushort    0 to 65535
-    - int       -2147483648 to 2147483647
-    - uint      0 to 4294967295
-    - long      -9.223.372036854775808 to 9.223.372036854775807
-    - ulong
+    Boolean type 
+        - only true and false
+    
+    Integral types
+        - sbyte     -128 to 127
+        - byte      0 to 255
+        - char      U+000 to U+ffff
+        - short     -32768 to 32767
+        - ushort    0 to 65535
+        - int       -2147483648 to 2147483647
+        - uint      0 to 4294967295
+        - long      -9.223.372036854775808 to 9.223.372036854775807
+        - ulong     0 to 18446744073709551615
+
+    Floating types
+        - float and double
+
+    Decimal types
+
+    String types
+        - Escape Sequence -> We can ignore one character by just putting a \(back slash) before it.
+        - Verbatin literal -> We can ignore all the escape sequence in a string by putting a @ before the string.
+
+---------------------------
+#Ref Video 6
+    C# Types
+    - Value Types - int float double structs enums etc
+    - Reference Types - Interfaces Class Deligates Arrays etc.
+
+    - By default Value types are non nullable .
+        To make it nullable use int? j=0
+        eg: string Name=null; (will work fine)
+            int i=null; (will give an error as it is value type.)
+
+    - Null Coalescing Operator ??
+        When we want a value to be assigned for null value then we use this operator.
+
+-------------------------------
+#Ref Video 7
+    Explicit Conversion
+        - may result in loss of some data 
+        - difference b/n using (int) & Convert.ToInt32 is that Convert.ToInt32 will throw an error when we want to store a large float value into integer 
+            wheresas (int) will not ant returns the MinValue of integer.
+
+    Parse and TryParse
+        - Parse will directly try to parse a string into int and if the string doesnt contain a valid int value then it will throw an error
+        - TryParse will check the string if it is a valid int , then only it will be sored to a variable
+            eg: int.TryParse(strNumber,out Result)
+
+---------------------------------
+#Ref Video 8
+    Arrays
+        - Collection of similar data types.
+        - Advantage - Arrays are strongly typed.
+        - Disadvantage - Can not grow in size once initialized , have to rely on Integral indices to store and retrieve items from array.
+
+----------------------------------
+#Ref Video 9 
+    Comments
+        Single Line -> //
+        Multiline -> /* */
+        XML documentation -> ///
+    Keyboard Shortcut
+        Ctrl + K , Ctrl + C 
+        Ctrl + K , Ctrl + U 
+-----------------------------------
+#Ref Video 10
+    Difference b/n | and ||
+        - if(UserNumber==10 || UserNumber==20)
+        - In single or | if the first condition is true then there is no need to check the other but still it checks.
+          In double or || if the first condition is false then only it will check the other 
+    Difference b/n & and &&
+        - if(UserNumber==10 && UserNumber==20)
+        - In single and & if the first condition is false still it checks the second.
+          In double and && if the first condition is false it will not check the other .
+
+        
+    
 
 
