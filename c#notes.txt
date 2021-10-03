@@ -88,7 +88,37 @@
         - In single and & if the first condition is false still it checks the second.
           In double and && if the first condition is false it will not check the other .
 
-        
+-------------------------------------
+#Ref Video 11
+    Switch 
+        - used to switch to multiple cases.
+    break
+        - if break statement is used inside a switch statemen , the constrol will leave the switch statement.
+            so we dont use break after a goto statement.
+    goto
+        - we can either jump to another case statement or to specific Label.
+    
+    Note: Using goto is bad programming style. We should avoid goto by all means.
+
+----------------------------------------
+#Ref Video 12
+    Loops in c#
+        - While loop -> checks the condition first. If true, statement in the loop get executed.
+        - do while loop ->checks it condition at the end of the loop . 
+            It means it guranteed to execute at least one time.
+            used to present a menu to the user.
+
+    Difference b/n while and do while
+        - While checks the condition at the beginning , whereas do while checks at the end of loop.
+        - guranteed to execute atleast once wheresas while not.
+
+    while v/s for loop
+        - In while loop we do initialization at one place, condition check at another and modification at another place
+         whereas for loop has all these at one place.
+            
+    Foreach 
+        - used to itirate through a collection(arraylist,hashtable,generics).    
+
     
 
 

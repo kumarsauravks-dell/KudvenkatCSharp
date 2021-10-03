@@ -34,4 +34,16 @@ Q23. WAP following these instructions:
         - Ask the user "Which type of coffee you want?" , "1 - Small , 2 - Medium , 3 - Large "
         - If the user enters a number other than 1 - 3 , give a message "Your choice is invalid."
         - At last give user a message "Thank you for shoping with us." , "Your bill amount is TotalCoffeeCost".
-Q24. 
+Q24. Instruction Continues
+        - Before Thank You message ask the user "Do you want to buy another coffee? Yes/No"
+        - if answer is yes jump to starting asking which type of coffee he wants.
+
+Q25. WAP using while loop to print even numbers upto a target number.
+Q26. WAP same as above & ask "Do you want to continue - Yes/No" . According to user decesion print even number or exit.
+Q27. Rewrite the coffee purchase program using do while.
+
+Q28. WAP to store numbers 101,102,103 in an array and use a while loop to print the numbers.
+Q29. Re-write the same program using for loop.
+Q30. Re-write the same program using foreach.
+Q31. WAP to print 1-20, put a break at 10 and again print it.
+Q32. WAP to print even numbers till 20 using continue.
