@@ -47,3 +47,67 @@ Q29. Re-write the same program using for loop.
 Q30. Re-write the same program using foreach.
 Q31. WAP to print 1-20, put a break at 10 and again print it.
 Q32. WAP to print even numbers till 20 using continue.
+
+Q33. WAP to create an instance method that print even numbers till 20.
+Q34. Re-write the same program with static method.
+Q35. WAP to create an instance method which returns the sum of the provided two numbers.
+
+Q36. WAP to create a static method(SimpleMethod) which takes one argument and change that value. In Main method print that value and show the example of pass by value parameter.
+Q37. Re-write the same program to show the example of pass by Reference parameter.
+Q38. WAP to return the sum and product both of two given numbers using output parameter.
+Q39. WAP to return an array using parameter array.
+
+Q40. WAP to create namespace ProjectA. Under ProjectA, create two other namespaces TeamA and TeamB . Call the static print method of ClassA.
+Q41. Rewrite the same program using two assemblies for ProjectA.TeamA and ProjectA.TeamB , call the print method using namespace alliases.
+
+Q42. WAP to create a Customer class having fields _firstName , _lastName. Create a constructor which takes this two arguments . Finally create a PrintFullName function to print the full name of Customer.
+Q43. Rewrite the same program but use the default parameterless constructor to show the default firstName and lastName.
+Q44. WAP to create a class Circle, its constructor will take the radius and CalculateArea function will return the area of the circle. Show Pi value should be declared static so that it doesnt take memory space every time.
+Q45. Rewrite the same program and put some writelines to show static constructors are called before instance constructors.
+
+Q46. WAP to create a class Employee having fields like FirstName, LastName, Email , and a method to PrintFullName.
+        Create another class PartTimeEmployee having field HourlyRate which inherit from Employee base class.
+        Create another class FullTimeEmployee having field YearlySalary which inherit from Employee base class.
+        Create instance of FullTimeEmployee and PartTimeEmployee and show base class fields and method are visible to both the classes.
+Q47. WAP to create a base class ParentClass and a derived class ChildClass. Show that parent class constructor get called before the child class in Inheritance.
+Q48. By default base class parameterless constructor get called but we want to call the constructor of our choice.
+        Create a parameterised constructor in base class which takes a message and prints the message. 
+        Create an instance of child class and try to call the parent class parameterised constructor with a message "Child class controlling Parent class."
+
+Q49. WAP to create a Employee class having fields FirstName and LastName with method PrintFullName().
+        Create another class PartTimeEmployee which inherits from Employee and create a PrintFullName() here also; just concatenate the word contractor here.
+        Intentionally call the base class PrintFullName method using -> base keyword, casting child class to parent, point parent class with child class
+
+Q50. WAP to create an Employee class having fields FirstName="FN" and LastName="LN" .
+        Create three more classes FullTimeEmployee, PartTimeEmployee & TemporaryEmployee inherited from Employee
+        Now create an instance of Employee class and try to call the PrintFullName of respective child class methods.
+
+Q51. Create a BaseClass with Print() method to print "Base class Print Method"
+        Create a DerivedClass inheriting from BaseClass. Now create an object of BaseClass and instantiate it with DerivedClass.
+        Show the difference between method Overriding & method Hiding.
+
+Q52. WAP to overload a method Add with number and type of parameters.
+
+Q53. WAP to create a Student class having fields like Id, Name, PassMarks. 
+        Show that Id can be assigned -ve number, Name can be assigned null and PassMarks can be changed to 0.
+Q54. Re-write the same program by making the fields private and creating a get and set methods to access them.
+Q55. Rewrite the same program using properties.
+Q56. WAP to create a struct Customer having private fields like _Id & _Name.
+        public properties like Id & Name, constructor which takes Id and Name,
+        method PrintDetails to print Id and Name.
+
+Q57. WAP to show that when we copy a reference type same copy of variable gets created ie. when we try to change one it will effect the other one.
+        Create a class Customer with properties Id and Name.Create to instances of Customer Class and copy one ito another.
+        Now assign some value to the Name field of reference variable & print it.
+
+Q58. Create an interface ICustomer with a Print method to print "Interface Print method."
+Q59. Create two interfaces ICustomer1 & ICustomer2 having Print1() and Print2 method respectively.
+        Inherit ICustomer2 with ICustomer1 and show class inheriting ICustomer1 have to provide implementation for both the Interface members.
+        
+
+
+
+
+
+
+

@@ -119,6 +119,172 @@
     Foreach 
         - used to itirate through a collection(arraylist,hashtable,generics).    
 
+------------------------
+#Ref Video 16
+    - Methods
+        - Allows us to define logic once and use it at many places
+        - make maintainence of application easier
+    - Difference b/n static and instance method
+        - Instance method -> multiple instance of the class can be created and each instance has its own seperate method.
+        - Static method -> No instance of that method and we can invoke only one defination of static method.
+
+#Ref Video 17
+    - 4 Different Types of Method Parameters 
+        1. Value Parameters -> creates a copy of the parameter passed , so modification does not affect each other.
+        2. Reference Parameters -> ref keyword on a method parameter causes a method to refer to the same variable that was passed into the method. 
+            Any changes made to the parameter in the method will be reflected in that variable when control passes back to the calling method.
+        3. Out Parameters -> used when we want a method to return more than one value.
+        4. Parameter Array -> The params keyword lets us specify a method parameter that takes a variable number of arguments.
+            We can send a comma seperated list of arguments, or an array or no arguments .
+            params keyword should be the last one in a method declaration and only one params keyword is permitted in a method declaration.
+
+---------------------------
+#Ref Video 18
+    Why Namespaces?
+    - used to organise our program.
+    - provide assistance in avoiding name clashes.
+    
+    - Namespaces dont correspond to file, directory or assembly names. 
+        They could be written in seperate files and/or seperate assemblies and still belong to same namespace.
+    - A namespace can contain
+        - another namespace
+        - class
+        - interfaces
+        - structs
+        - enums
+        - delegates
+
+-----------------------------
+#Ref Video 19
+    Class
+        - There are simple datatypes like int , float, double etc.
+            If we want to create complex types, we can make use of classes.
+        - A class consist of data and behavior
+            Data - represented by its fields.
+            Behavior - represented by its methods.
+
+    Constructor 
+        - Initializes class fields
+        - Automatically called when an instance of class is created.
+        - do not have return type and always have same name as that of the class.
+        - is not mandatory, if not provided a default parameterless constructor is automatically provided.
+        - can be overloaded by number and type of parameters.  
+
+    Destructor 
+        - same name as that of class with ~ symbol infront of them.
+        - dont take any parameter and do not return a value.
+        - are placed where you could put code to release any resources your class was holding during its lifetime.
+        
+--------------------------------
+#Ref Video 20
+    Static vs instance members.
+        - Static members are invoked using class names whereas instance members are invoked using instances(objects) of a class
+        - Instance members belongs to specific instance of a class . If we create 3 objects of a class, I will have three sets of instance members in memory.
+
+        - "this" refers to instance field of a class. If we make the field static then "this" will not work ,instead we have to initialize the field using the class name.(class.staticField and not this.staticField)
+
+        - Class members - fields, methods, properties, events, indexers, constructors.
+
+    Static Constructor
+        - used to initialize static fields in a class
+        - use static keyword to make a constructor static.
+        - called only once , no matter how many instance we create.
+        - called before instance constructors.
+
+--------------------------------------
+#Ref Video 21,22,23,24,25,26,27
+    Pillars of object oriented programming
+    1. Inheritance
+    2. Encapsulation 
+    3. Abstraction
+    4. Polymorphism
+
+    Inheritance
+    It allows code reuse which can reduce time and errors.
+    We will specify all the common fields, properties, methods in the base class which allows reusability .
+        In derived class we will have only fields, properties, methods, that are specific to them.
+        
+    Inheritance syntax
+    - C# only supports single class inheritance, not multiple although it supports multilevel inheritance.
+    - C# supports multiple interface inheritance.
+    - Child class is a specialization of base class
+    - Base class are automatically instatiated before derived class.
+    - Parent class constructor executes before ChildClass constructor.
+
+    Inheritance concept
+    - Use the new keyword to hide a base Class member, we will get a compiler warning if we miss the new keyword
+    - Different ways to invoke a hidden base class member from derived class.
+        - use base keyword { base.PrintFullName }
+        - cast child type to parent type and invoke the hidden method { ((Employee)PTE).PrintFullName(); }
+        - ParentClass PC=new ChildClass();
+            PC.PrintFullName();
+    
+    Polymorphism 
+    - allows us to invoke derived class methods through a base class reference during runtime.
+    - in base class the method is declared virtual and in derived class we ovveride the same method.
+    - virtual keyword indicates the method can be overridden in any derived class.
+
+    Method Overriding vs Method Hiding
+    - In Method Overriding a BaseClass reference variable pointing to a child class object will invoke the overridden method in the ChildClass
+    - In method hiding a BaseClass reference variable pointing to a child class object will invoke the hidden method in the BaseClass.
+
+    Method Overloading
+    - allows a class to have multiple methods with same name but different signature.
+    - overloading can be based on the number, types(int, char, float etc.) and kind(value, ref, out) of parameter.
+    - signature of a method does not include in the return type and the params modifier.
+        So it is not possible to overload a function just based on the return type or params modifier.
+
+    Why Properties
+    - Marking a class fields public and exposing it to the external world is bad, as we will not have control 
+        over what get assigned and returned.
+    - Problem with public fields.
+        - Id should always be non negative number.
+        - Name can not be set to null.
+        - If Name is missing "No Name" should be returned.
+        - PassMarks should be read only.
+    - Programming Languages that does not have properties use getter and setter methods to encapsulate and protect fields.
+
+--------------------------------------
+#Ref Video 28,29,30
+    Structs
+    - Just like classes structs can have
+        - Private Fields 
+        - Public Properties
+        - Constructor
+        - Methods
+
+    Difference Between Classes & Structs
+    - Struct is value type whereas Class is a reference type.
+    - Struct can be stored in stack whereas Class in heap
+    - Value type hold their values in memory where they are declared, but reference types hold a reference to an object in memory.
+    - Value types are destroyed immidietely after the scope is lost, whereas for reference types only the reference variable is destroyed after scope is lost;
+         the real object is later destroyed by garbage collector.
+    - When we copy a struct into another struct, a new copy of struct gets created and modification on one struct will not affect the values contained by other struct.
+        When we copy a class into another class, we only get a copy of reference variable. Both the reference variables point to same object on the heap.
+        So,operation on one variable will affect the values contained by the other reference variable.
+
+    - Structs cant have destructors but classes have.
+    - Structs can not have Explicit parameter less constructor whereas classes have.
+    - Structs cant inherited from another class whereas class can.
+    - Both classes and struct can inherit from interfaces.
+    - eg: int(System.Int32), double(System.Double) etc.
+    - Structs are sealed types.
+
+    Interfaces
+    - Just like classes interfaces also contains properties, methods, delegates or events but only declaration no implementation.
+    - Interface members are public by default and they dont allow explicit access modifiers.
+    - Interface do not contain fields.
+    - If class/struct inherits from an interface it must provide implementation for all interface members otherwise we get compiler error.
+    - A class/struct can inherit from more than one interface at the same time, whereas classes dont.
+    - Interface can inherit from other interfaces. A class that inherits that interface must provide implementation for all interface members in the entire interface inheritance chain.
+    - We can not create an instance of an interface but an interface reference variable can point to a derived class object.
+    
+
+     
+    
+    
+         
+
     
 
 

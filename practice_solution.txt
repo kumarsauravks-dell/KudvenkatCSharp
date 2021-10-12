@@ -568,3 +568,846 @@ Solution 32
         }
         Console.ReadKey();
     }
+---------------------------------------------------
+Solution 33
+class Program
+{
+public static void Main()
+    {
+        Program p = new Program();
+        p.EvenNumbers();
+    }
+
+    public void EvenNumbers()
+    {
+        int Start = 0;
+        while (Start <= 20)
+        {
+            Console.WriteLine(Start);
+            Start += 2;
+        }
+        Console.ReadKey();
+    }
+}
+-------------------------------------
+Solution 34
+class Program
+{
+    public static void Main()
+    {
+        Program.EvenNumbers();
+    }
+    public static void EvenNumbers()
+    {
+        int Start = 0;
+        while(Start <= 20)
+        {
+            Console.WriteLine(Start);
+            Start += 2;
+        }
+        Console.ReadLine();
+    }
+}
+------------------------------------------------
+Solution 35
+    public static void Main()
+    {
+        Program p = new Program();
+        int Result = p.Sum(4, 6);
+        Console.WriteLine("Sum of the two numbers is : {0}", Result);
+        Console.ReadKey();
+    }
+    public int Sum(int FN,int SN)
+    {
+        return FN + SN;
+    }
+------------------------------------------------
+Solution 36
+class Program
+{
+    public static void SimpleMethod(int i)
+    {
+        i = 101;
+    }
+
+    public static void Main()
+    {
+        int i = 0;
+        Program.SimpleMethod(i);
+        Console.WriteLine(i);
+        Console.ReadKey();
+    }
+}
+---------------------------------------------------
+Solution 37
+class Program
+{
+    public static void SimpleMethod(ref int i)
+    {
+        i = 101;
+    }
+
+    public static void Main()
+    {
+        int i = 0;
+        Program.SimpleMethod(ref i);
+        Console.WriteLine(i);
+        Console.ReadKey();
+    }
+}
+---------------------------------------------------
+Solution 38 
+class Program
+{
+    public static void Calculate(int FN,int SN, out int Sum,out int Product)
+    {
+        Sum = FN + SN;
+        Product = FN * SN;
+    }
+
+    public static void Main()
+    {
+        int Total = 0;
+        int Product = 0;
+        Program.Calculate(10, 20, out Total, out Product);
+        Console.WriteLine("Sum is {0} && Product is {1}. ", Total, Product);
+        Console.ReadKey();
+    }
+}
+------------------------------------------------------
+Solution 39
+class Program
+{
+    public static void ParamsMethod(params int[] Numbers)
+    {
+        Console.WriteLine("The size of the array is {0}", Numbers.Length);
+        foreach(int n in Numbers)
+        {
+            Console.WriteLine(n);
+        }
+    }
+    public static void Main()
+    {
+        int[] Nums = new int[3];
+        Nums[0] = 101;
+        Nums[1] = 102;
+        Nums[2] = 103;
+        Program.ParamsMethod();
+        Program.ParamsMethod(Nums);
+        Program.ParamsMethod(1, 2, 3,4);
+
+        Console.ReadKey();
+    }
+}
+---------------------------------------------------------
+Solution 40
+class Program
+{
+    public static void Main()
+    {
+        ProjectA.TeamA.ClassA.Print();
+        ProjectA.TeamB.ClassA.Print();
+        Console.ReadKey();
+    }
+}
+namespace ProjectA
+{
+    namespace TeamA
+    {
+        class ClassA
+        {
+            public static void Print()
+            {
+                Console.WriteLine("Print method of ProjectA TeamA");
+            }
+        }
+    }
+}
+namespace ProjectA
+{
+    namespace TeamB
+    {
+        class ClassA
+        {
+            public static void Print()
+            {
+                Console.WriteLine("Print method of ProjectA TeamB");
+            }
+        }
+    }
+}
+---------------------------------------------------------
+Solution 41
+using PATA = ProjectA.TeamA;
+using PATB = ProjectA.TeamB;
+
+class Program
+{
+    public static void Main()
+    {
+        PATA.ClassA.Print();
+        PATB.ClassA.Print();
+        Console.ReadKey();
+    }
+}
+namespace ProjectA
+{
+    namespace TeamA
+    {
+        class ClassA
+        {
+            public static void Print()
+            {
+                Console.WriteLine("Print method of ProjectA TeamA");
+            }
+        }
+    }
+}
+namespace ProjectA
+{
+    namespace TeamB
+    {
+        class ClassA
+        {
+            public static void Print()
+            {
+                Console.WriteLine("Print method of ProjectA TeamB");
+            }
+        }
+    }
+}
+-----------------------------------------
+Solution 42
+class Customer
+{
+    string _firstName;
+    string _lastName;
+
+    public Customer(string FN,string LN)
+    {
+        _firstName = FN;
+        _lastName = LN;
+    }
+    public void PrintFullName()
+    {
+        Console.WriteLine("Hello {0} {1}", _firstName, _lastName);
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer("Kumar", "Saurav");
+        C1.PrintFullName();
+        Customer C2 = new Customer("Rohan", "Jaiswal");
+        C2.PrintFullName();
+        Console.ReadKey();
+    }
+}
+----------------------------------------------
+Solution 43
+class Customer
+{
+    string _firstName="";
+    string _lastName="";
+
+    public Customer()
+        :this("No FirstName","No LastName")
+    { }
+    public Customer(string FN, string LN)
+    {
+        _firstName = FN;
+        _lastName = LN;
+    }
+    public void PrintFullName()
+    {
+        Console.WriteLine("Hello {0} {1}", _firstName, _lastName);
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer("Kumar", "Saurav");
+        C1.PrintFullName();
+        Customer C2 = new Customer();
+        C2.PrintFullName();
+        Console.ReadKey();
+    }
+}
+-----------------------------------------------------
+Solution 44
+class Circle
+{
+    int _Radius;
+    static float _PI = 3.14F;
+
+    public Circle(int Radius)
+    {
+        _Radius = Radius;
+    }
+    public float CalculateArea()
+    {
+        return Circle._PI * this._Radius * this._Radius;
+    }
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Circle C1 = new Circle(5);
+        float Area = C1.CalculateArea();
+        Console.WriteLine("Area of the circle is {0}", Area);
+        Console.ReadKey();
+    }
+}
+--------------------------------------------------
+Solution 45
+class Circle
+{
+    int _Radius;
+    static float _PI;
+
+    static Circle()
+    {
+        Console.WriteLine("Static constructor called.");
+        _PI = 3.14F;
+    }
+    public Circle(int Radius)
+    {
+        Console.WriteLine("Normal constructor called.");
+        _Radius = Radius;
+    }
+    public float CalculateArea()
+    {
+        return Circle._PI * this._Radius * this._Radius;
+    }
+}
+
+class Program
+{
+    public static void Main()
+    {
+        Circle C1 = new Circle(5);
+        float Area = C1.CalculateArea();
+        Console.WriteLine("Area of the circle is {0}", Area);
+        Console.ReadKey();
+    }
+}
+
+-----------------------------------------------
+Solution 46
+class Employee
+{
+    public string FirstName;
+    public string LastName;
+    public string Email;
+    public void PrintFullName()
+    {
+        Console.WriteLine("Hello {0} {1}. ", FirstName ,LastName);
+    }
+}
+class FullTimeEmployeee:Employee
+{
+    public int YearlySalary;
+}
+class PartTimeEmployee:Employee
+{
+    public int HourlyRate;
+}
+class Program
+{
+    public static void Main()
+    {
+        FullTimeEmployeee fte = new FullTimeEmployeee();
+        fte.FirstName = "Kumar";
+        fte.LastName = "Saurav";
+        fte.YearlySalary = 400000;
+        fte.PrintFullName();
+        PartTimeEmployee pte = new PartTimeEmployee();
+        pte.FirstName = "Part";
+        pte.LastName = "Time";
+        pte.HourlyRate = 500;
+        pte.PrintFullName();
+        Console.ReadKey();
+    }
+}
+--------------------------
+Solution 47
+public class ParentClass
+{
+    public ParentClass()
+    {
+        Console.WriteLine("Parent Class Constructor");
+    }
+}
+public class ChildClass:ParentClass
+{
+    public ChildClass()
+    {
+        Console.WriteLine("Child Class Constructor");
+    }
+}
+public class Program
+{
+    public static void Main() {
+        ChildClass CC = new ChildClass();
+        Console.ReadKey();
+    }
+
+}
+
+-------------------------------------
+Solution 48
+public class ParentClass
+{
+    public ParentClass()
+    {
+        Console.WriteLine("Parent Class Constructor");
+    }
+    public ParentClass(string Message)
+    {
+        Console.WriteLine(Message);
+    }
+}
+public class ChildClass:ParentClass
+{
+    public ChildClass():base("Child Class controlling Base Class")
+    {
+        Console.WriteLine("Child Class Constructor");
+    }
+}
+public class Program
+{
+    public static void Main() {
+        ChildClass CC = new ChildClass();
+        Console.ReadKey();
+    }
+
+}
+--------------------------------------------------
+Solution 49
+using System;
+public class Employee
+{
+    public string FirstName="FN";
+    public string LastName="LN";
+    public void PrintFullName()
+    {
+        Console.WriteLine("Hello {0} {1}.", FirstName, LastName);
+    }
+}
+public class PartTimeEmployee:Employee
+{
+    public new void PrintFullName()
+    {
+        //base.PrintFullName();
+        Console.WriteLine("Hello {0} {1} - Contractor", FirstName, LastName);
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        PartTimeEmployee PTE = new PartTimeEmployee();
+        //PTE.PrintFullName();
+        //((Employee)PTE).PrintFullName();
+        Employee E = new PartTimeEmployee();
+        E.PrintFullName();
+        Console.ReadKey();
+    }
+}
+-----------------------------------------------
+Solution 50
+using System;
+public class Employee
+{
+    public string FirstName = "FN";
+    public string LastName = "LN";
+    public virtual void PrintFullName()
+    {
+        Console.WriteLine("Hello {0} {1}.", FirstName, LastName);
+    }
+}
+public class FullTimeEmployee : Employee
+{
+    public override void PrintFullName()
+    {
+        Console.WriteLine("Hello {0} {1}. - Full Time Employee", FirstName, LastName);
+    }
+}
+public class PartTimeEmployee : Employee
+{
+    public override void PrintFullName()
+    {
+        Console.WriteLine("Hello {0} {1}. - Part Time Employee", FirstName, LastName);
+    }
+}
+public class TemploraryEmployee : Employee
+{
+    public override void PrintFullName()
+    {
+        Console.WriteLine("Hello {0} {1}. - Temporary Employee", FirstName, LastName);
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Employee[] employees =new Employee[3];
+        employees[0] = new PartTimeEmployee();
+        employees[1] = new FullTimeEmployee();
+        employees[2] = new TemploraryEmployee();
+        foreach(Employee e in employees)
+        {
+            e.PrintFullName();
+        }
+        Console.ReadKey();
+    }
+
+}
+-----------------------------------------
+Solution 51
+using System;
+class BaseClass
+{
+    public virtual void Print()
+    {
+        Console.WriteLine("Base Class Print Method");
+    }
+}
+class DerivedClass : BaseClass
+{
+    //For Method ovverriding
+    //public new void Print()
+
+    //For Method hiding
+    public new void Print()
+    {
+        Console.WriteLine("Derived Class Print Method");
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        BaseClass BC = new DerivedClass();
+        BC.Print();
+        Console.ReadKey();
+    }
+}
+-------------------------------------
+Solution 52
+using System;
+class Program
+{
+    public void Add(int FN,int SN)
+    {
+        int Sum = FN + SN;
+        Console.WriteLine("The sum of {0} and {1} is : {2}", FN, SN, Sum);
+    }
+    public void Add(float FN, float SN)
+    {
+        float Sum = FN + SN;
+        Console.WriteLine("The sum of {0} and {1} is : {2}", FN, SN, Sum);
+    }
+    public void Add(int FN, int SN,out int Sum)
+    {
+        Sum = FN + SN;
+        Console.WriteLine("The sum of {0} and {1} is : {2}", FN, SN, Sum);
+    }
+    public static void Main()
+    {
+        Program P = new Program();
+        P.Add(10, 20);
+        P.Add(10.3F, 20.5F);
+        int Sm;
+        P.Add(20, 30, out Sm);
+        Console.ReadKey();
+    }
+}
+--------------------------------------
+Solution 53
+using System;
+class Student
+{
+    public int Id;
+    public string Name;
+    public int PassMarks=30;
+    public void Print()
+    {
+        Console.WriteLine("Student Details : Id={0}, Name={1}, PassMarks={2}", Id, Name, PassMarks);
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Student S = new Student();
+        S.Id = -101;
+        S.Name = null;
+        S.PassMarks = 0;
+        S.Print();
+        Console.ReadKey();
+    }
+}
+----------------------------------------
+Solution 54
+using System;
+class Student
+{
+    private int _Id;
+    private string _Name;
+    private int _PassMarks=30;
+
+    public void SetId(int Id)
+    {
+        if(Id<=0){
+            throw new Exception("Id should be greater than 0");            
+        }
+        else
+        {
+            this._Id = Id;
+        }
+    }
+    public int GetId()
+    {
+        return this._Id;
+    }
+
+    public void SetName(string Name)
+    {
+        if (string.IsNullOrEmpty(Name))
+        {
+            throw new Exception("Name cant be null value.");
+        }
+        else
+        {
+            this._Name = Name;
+        }
+    }
+
+    public string GetName()
+    {
+        return string.IsNullOrEmpty(this._Name) ? "No Name" : this._Name;
+    }
+    public int GetPassMarks()
+    {
+        return this._PassMarks;
+    }
+    public void Print()
+    {
+        Console.WriteLine("Student Details : Id={0}, Name={1}, PassMarks={2}", GetId(), GetName(), GetPassMarks());
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Student S = new Student();
+        S.SetId(101);
+        S.SetName("Kumar");
+        S.Print();
+        Console.ReadKey();
+    }
+}
+-----------------------------------------------------------
+Solution 55
+using System;
+class Student
+{
+    private int _Id;
+    private string _Name;
+    private int _PassMarks=30;
+    public int Id
+    {
+        get
+        {
+            return this._Id;
+        }
+        set
+        {
+            if (value <= 0)
+            {
+                throw new Exception("Id should be greater than 0");
+            }
+            else
+            {
+                this._Id = value;
+            }
+        }
+     }
+
+    public string Name
+    {
+        set
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new Exception("Name cant be null value.");
+            }
+            else
+            {
+                this._Name = value;
+            }
+        }
+        get
+        {
+            return string.IsNullOrEmpty(this._Name) ? "No Name" : this._Name;
+        }
+        
+    }
+    public int PassMarks
+    {
+        get
+        {
+            return this._PassMarks;
+        }
+        
+    }
+    public void Print()
+    {
+        Console.WriteLine("Student Details : Id={0}, Name={1}, PassMarks={2}", Id, Name, PassMarks);
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Student S = new Student();
+        S.Id=101;
+        S.Name="Kumar";
+        S.Print();
+        Console.ReadKey();
+    }
+}
+-------------------------------------
+Solution 56
+public struct Customer
+{
+    private int _Id;
+    private string _Name;
+
+    public int Id
+    {
+        get { return this._Id; }
+        set { this._Id = value; }
+    }
+    public string Name
+    {
+        get { return this._Name; }
+        set { this._Name = value; }
+    }
+    public Customer(int Id,string Name)
+    {
+        this._Id = Id;
+        this._Name = Name;
+    }
+    public void PrintDetails()
+    {
+        Console.WriteLine("Student Id is : {0} && Name is : {1}", this._Id, this._Name);
+    }
+}
+public class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer(101, "Kumar");
+        C1.PrintDetails();
+
+        Customer C2 = new Customer();
+        C2.Id = 102;
+        C2.Name = "Sam";
+        C2.PrintDetails();
+
+        Customer C3 = new Customer
+        {
+            Id = 103,
+            Name = "Tom"
+        };
+        C3.PrintDetails();
+        Console.ReadKey();
+    }
+}
+-------------------------------------------
+Solution 57 
+public class Customer
+{
+    public int Id{ get; set; }
+    public string Name { get; set; }
+}
+public class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer();
+        C1.Name = "Kumar";
+        Customer C2 = C1;
+        C2.Name = "Saurav";
+        Console.WriteLine("Value of C1.Name : {0} && Value of C2.Name : {1}", C1.Name, C2.Name);
+        Console.ReadKey();
+
+    }
+}
+-------------------------------------------------
+Solution 58
+using System;
+interface ICustomer
+{
+    void Print();
+}
+public class Customer : ICustomer
+{
+    public void Print()
+    {
+        Console.WriteLine("Interface Print Method.");
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer();
+        C1.Print();
+        Console.ReadKey();
+    }
+}
+------------------------------------------------------
+Solution 59
+interface ICustomer1
+{
+    void Print1();
+}
+interface ICustomer2 : ICustomer1
+{
+    void Print2();
+}
+public class Customer : ICustomer2
+{
+    public void Print1()
+    {
+        Console.WriteLine("Print1 Method of ICustomer1");
+    }
+    public void Print2()
+    {
+        Console.WriteLine("Print2 Method of ICustomer2");
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer();
+        C1.Print1();
+        C1.Print2();
+
+        ICustomer1 C2 = new Customer();
+        C2.Print1();
+
+        Console.ReadKey();
+
+    }
+}
+-----------------------------------------

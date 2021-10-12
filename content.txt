@@ -70,7 +70,68 @@
 
 #15. for,foreach loop
 
+#16. Methods in c#
+    - structure of a method.
+    - difference b/n static and instance methods 
+    
+#17. Different types of method parameters
+    - 4 types of method parameters
+    - Value parameters
+    - Reference parameters
+    - Out parameters
+    - Parameter Arrays
+    - Method parameters vs Method Arguments
 
+#18. Namespaces in c#
+    - Namespace basics
+    - Using Alias Directives
+    - Different namespace members
+    
+#19. Introduction to classes
+    - What is a class 
+    - Purpose of a class constructor
+    - Overloading class constructor
+    - Understanding this keyword
+    - Destructor
+
+#20. Static and Instance Class members
+    - static class members
+    - instance class members
+    - Difference b/n static and instance members
+    - An Example explaining when we should make certain members static
+
+#21. Inheritance
+    - Why Inheritance
+    - Advantages of Inheritance
+    - Inheritance syntax
+    - Inheritance Concept
+
+#22. Method Hiding in C#
+    - Method hiding
+    - Invoke hidden base class members
+
+#23. Polymorphism
+    - overloading virtual method
+    - polymorphism
+
+#24. Method Overriding vs Method Hiding
+
+#25. Method Overloading
+
+#26. Why Properties
+    - the need for properties
+
+#27. Properties in C#
+
+#28. Structs in C#
+
+#29. Difference between classes and structs
+
+#30. Introduction to Interfaces
+    - Interface basics
+
+
+    
 
 
 
