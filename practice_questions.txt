@@ -103,7 +103,45 @@ Q57. WAP to show that when we copy a reference type same copy of variable gets c
 Q58. Create an interface ICustomer with a Print method to print "Interface Print method."
 Q59. Create two interfaces ICustomer1 & ICustomer2 having Print1() and Print2 method respectively.
         Inherit ICustomer2 with ICustomer1 and show class inheriting ICustomer1 have to provide implementation for both the Interface members.
-        
+Q60. Create two interfaces I1 & I2 having a common method InterfaceMethod().
+        In the Program class which inherits both from I1 & I2 show how to print specific Interface method.
+Q61. Rewrite the same program and make the I1 method to be the default method to be called.
+
+Q62. Create a abstract class Customer having a Print() methos. Inherit it to Program class and define a body. Finally call the Print() method.
+Q63. Rewrite the same program in which show that abstract class can have proper method body.
+
+Q64. Create four classes A,B,C,D respectively. All are having a Print() method .
+        Class B and C should inherit from Class A , Class D should inherit from both class B,C .
+        Create an instance of class D and call the print method.
+Q65. Create two interfaces IA ,IB & two classes A, B. Both Interfaces have thier own Print method.
+        Now ceate a class AB that inherits both interface IA,IB. instantiate both the classes and refer the method of both the classes to their instances.
+        Finally in Main method create the instance of AB and call those methods of class A , B.
+
+Q66. Create a function Hello which takes a string parameter and print it to console. 
+        Create a delegate HelloFunctionDelegate which will point to Hello function and pass a string "Hello from delegate" in it.
+
+Q67. Create a class Employee having fields like ID, Name, Salary, Experience .
+        Create a function PromoteEmployee which takes a list of employees and if the Experience is greater than 5years, print the employee as promoted.
+Q68. Rewrite the same program using delegate
+Q69. Rewrite the same program and use condition with lamda expression.
+
+Q70. Create a delegate SampleDelegate which will point to three methods SampleMethodOne, SampleMethodTwo, SampleMethodThree
+Q71. Rewrite the same program and use += to register method to delegate.
+
+Q72. Show that if delegate has a return type other than void and if the delegate is a multicast delegate , only the value of 
+        last invoked method will be returned.
+Q73. Rewrite the same program using output parameter.
+
+Q74. Create a Employee class having properties like Name and Gender. Create an array of 3 employees of type Employee and print thier name and gender.
+Q75. Rewrite te same program using Enums.
+
+Q76. Create an Enum Gender having Unknown,Male,Female and then print the Names and Values residing in the Enum.
+Q77. Rewrite the same program , try to change the underlying type of enum to short and also change the default values to different values.
+
+Q78. Create a Type Customer having Type members like fields, properties and method
+Q79. Rewrite the same program and distribute Fiels,Properties,Methods and Main Method in regions.
+
+Q80. Create a Customer class with a protected field Id. Create another class CorporateCustomer and show that protected members can only be accessible through a class which is derived from it.
 
 
 

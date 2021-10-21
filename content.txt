@@ -130,7 +130,45 @@
 #30. Introduction to Interfaces
     - Interface basics
 
+#31. Explicit Interface Implimentation
 
+#32. Abstract Classes
+
+#33. Abstract Class vs Interface
+
+#34. Problem of multiple class inheritance
+
+#35. Multiple class inheritance using Interfaces
+
+#36. Deligates in C#
+    - The basics of delegates
+
+#37. Delegate usage in c# - 1
+
+#38. Delegate usage in c# - 2
+
+#39. Multicast Delegate
+    
+#45. Why Enums 
+    - Why enums are required
+    - What are the problems of not using enums
+
+#46. Enums Example
+    - Using enum in an example
+    - The advantage of using enums
+    
+#47. Enums
+    - Enums concepts
+
+#48. Difference b/n Types and Type members
+    - difference b/n types & type members
+    - Organise code with regions
+
+#49. Access Modifiers
+    - Private,Public,Protected
+
+#50. Access Modifiers
+    - Internal, Protected Internal
     
 
 

@@ -1,35 +1,22 @@
 ﻿using System;
-interface ICustomer1
+class Customer
 {
-    void Print1();
+    protected int Id;
 }
-interface ICustomer2 : ICustomer1
+class CorporateCustomer:Customer
 {
-    void Print2();
-}
-public class Customer : ICustomer2
-{
-    public void Print1()
+    public void Print()
     {
-        Console.WriteLine("Print1 Method of ICustomer1");
-    }
-    public void Print2()
-    {
-        Console.WriteLine("Print2 Method of ICustomer2");
+        Id = 101;
+        Console.WriteLine("Id is {0}.", Id);
     }
 }
 class Program
 {
     public static void Main()
     {
-        Customer C1 = new Customer();
-        C1.Print1();
-        C1.Print2();
-
-        ICustomer1 C2 = new Customer();
-        C2.Print1();
-
+        CorporateCustomer CC = new CorporateCustomer();
+        CC.Print();
         Console.ReadKey();
-
     }
 }

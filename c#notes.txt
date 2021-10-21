@@ -279,6 +279,102 @@
     - Interface can inherit from other interfaces. A class that inherits that interface must provide implementation for all interface members in the entire interface inheritance chain.
     - We can not create an instance of an interface but an interface reference variable can point to a derived class object.
     
+    Explicit Interface implementation
+    Question : A class inherits from 2 interfaces and both the interfaces have the same method name. How should the class implements the method for both the interfaces?
+    Solution : Explicit Interface Implimentation
+        When a class explicitly implements an interface member, the interface member can no longer be accessed through the class reference variable, but only through the interface reference variables.
+
+    If we want to make one of interface method default, then implement that normally and  the other interface method explicitly.
+    This makes the default method to be accessible through class instance.
+
+------------------------------------------
+#Ref Video 32
+    Abstract Classes
+    - An abstract class is incomplete and hence can not be instantiated.
+    - can only be used as base class
+    - can not be sealed
+    - may contain abstract members(methods, indexers,events) but not mandatory.
+    - a non-abstract class derived from an abstract class must provide implementation for all inherited abstract members.
+
+    If a class inherits an Abstract class , there are two options availabe for that class..
+    Option 1. provide implementation for all its abstract members.
+    Option 2. that class has also has to be marked as abstract
+
+    Abstract Classes vs interfaces
+    - Abstract class can have implementation for some of its members(methods) but interfaces cant have implementation for any of its members.
+    - Interface cannot have fields whereas abstract class can have fields.
+    - An interface can inherit from another interface only and cant inherit from an abstract class,
+        whereas an abstract class can inherit from another abstract class or other interface.
+    - A class can inherit from multiple interfaces at the same times, where as a class cannot inherit from multiple classes at the same time.
+    - Abstract class member can have access modifiers whereas interface members can not have access modifiers.
+    
+----------------------------------
+Ref Video 36
+    Delegate
+    - A delegate is a type safe function pointer. It holds a reference(pointer) to a function.
+    - Type safe -> The signature of the delegate must match the signature of the function, the delegate points to.
+    - Delegate is similar to class . we just create an instance of it, we have to pass the function name as parameter to delegate constructor and it is to this function the delegate will point to.
+    - Delegate syntax look very similar to a method with a delegate keyword.
+
+    Multicast Delegate
+    - is a delegate that has references to more than one function. 
+        When we invoke a multicast delegate, all the function the delegate is pointing to are invoked.
+    - There are 2 approaches to create a multicast delegate. Depending on the approaches we use :-
+        + or += to register a method to the delegate
+        - or -= to unregister a method to the delegate
+    - Note: A multicast delegate invokes the methods in the invocation list, in the same order in which they are added.
+    - If the delegate has a return type other than void and if the delegate is a multicast delegate , only the value of 
+        last invoked method will be returned . Along the same same line , if the delegate has an output parameter 
+        the value of the output parameter, will be the value assigned to the last method.
+    - Where do we use multicast delegate? 
+        It makes implementation of observer design pattern very simple. Observer pattern is also called as publish/subscribe pattern.
+
+----------------------------------
+Skip Videos - 40, 41 , 42, 43, 44
+----------------------------------
+#Ref Video 45,46,47
+    Enums
+    - Enums are strongly typed constants.
+    - If a program uses set of integral numbers , our program becomes less readable and maintainable. Here we generally use Enums.
+    - Enums are strongly typed hence an explicit cast is needed to convert from enum type to integer type and vice versa. 
+        Also an enum of one type can not be implicitly assigned to an enum of another type even though the underlying value of their members are same.
+    - the default underlying type of an enum is int.
+    - default value of first element is 0 and gets incremented by 1.
+    - It is possible to customize  the underlying type and value.
+    - Enums are value types.
+    - enum -> used to create enumeration.
+        Enum -> class which contains static GetValues() and GetNames()
+-----------------------
+#Ref Video 48,49,50
+    Type & Type members
+    -Types - Classes , structs, enums, interface, delegate are called types.
+    -Type members - fields, properties, constructor, methods etc that reside in a type.
+
+    -Types have 2 access modifiers -> public and internal
+    -Type members have all 5 access modifiers -> public, private, protected, internal, protected internal
+
+    Regions
+    Using regions we can expand and collapse sections of our code either manually or using visual studio : Edit -> Outlining -> Toggle All Outlining
+
+    Access Modifiers
+    1. Private      2. Public       3.Protected
+    4.Internal      5. Protected Internal
+
+    Private - Private members are availabe only within the containing type.
+    Public - Public members are available anywhere, no restrictions.
+    Protected - Protected members are available within the containing type and the type that derive from the containing type.(base.Id,this.Id)
+    Internal - Internal members are accessible anywhere in the containing assembly.
+    Protected Internal - anywhere in the containing assembly and from within a derived class in any other assembly.
+
+-----------------------------------------
+
+
+
+
+
+
+
+
 
      
     

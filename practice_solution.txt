@@ -1411,3 +1411,690 @@ class Program
     }
 }
 -----------------------------------------
+Solution 60
+using System;
+interface I1
+{
+    void InterfaceMethod();
+}
+interface I2
+{
+    void InterfaceMethod();
+}
+public class Program:I1,I2
+{
+     void I1.InterfaceMethod()
+    {
+        Console.WriteLine("I1 Interface Method Implementation");
+    }
+    void I2.InterfaceMethod()
+    {
+        Console.WriteLine("I2 Interface Method Implementation");
+    }
+
+    public static void Main()
+    {
+        Program P = new Program();
+        ((I1)P).InterfaceMethod();
+        ((I2)P).InterfaceMethod();
+
+        I1 I1 = new Program();
+        I1.InterfaceMethod();
+        I1 I2 = new Program();
+        I2.InterfaceMethod();
+
+        Console.ReadKey();
+    }
+}
+-----------------------------------------
+Solution 61
+using System;
+interface I1
+{
+    void InterfaceMethod();
+}
+interface I2
+{
+    void InterfaceMethod();
+}
+public class Program:I1,I2
+{
+    public void InterfaceMethod()
+    {
+        Console.WriteLine("I1 Interface Method Implementation");
+    }
+    void I2.InterfaceMethod()
+    {
+        Console.WriteLine("I2 Interface Method Implementation");
+    }
+
+    public static void Main()
+    {
+        Program P = new Program();
+        P.InterfaceMethod();
+
+        Console.ReadKey();
+    }
+}
+--------------------------------------
+Solution 62
+using System;
+public abstract class Customer
+{
+    public abstract void Print();
+}
+
+public class Program : Customer
+{
+    public override void Print()
+    {
+        Console.WriteLine("Abstract Class Print Method.");
+    }
+    public static void Main()
+    {
+        Program P = new Program();
+        P.Print();
+
+        Customer C = new Program();
+        C.Print();
+        Console.ReadKey();
+    }
+}
+----------------------------------------
+Solution 63
+using System;
+public abstract class Customer
+{
+    public void Print()
+    {
+        Console.WriteLine("Abstract Class Print Method.");
+    }
+}
+
+public class Program : Customer
+{
+    public static void Main()
+    {
+        Program P = new Program();
+        P.Print();
+        Console.ReadKey();
+    }
+}
+--------------------------------
+Solution 64
+using System;
+class A
+{
+    public virtual void Print()
+    {
+        Console.WriteLine("Class A Implementation");
+    }
+}
+class B : A
+{
+    public override void Print()
+    {
+        Console.WriteLine("Class B Overriding Print() Method");
+    }
+}
+class C : A
+{
+    public override void Print()
+    {
+        Console.WriteLine("Class C Overriding Print() Method");
+    }
+}
+//class D : B , C we want but is not possible
+class D : B
+{
+
+}
+class Program
+{
+    public static void Main()
+    {
+        D d = new D();
+        d.Print();
+        Console.ReadKey();
+    }
+}
+
+------------------------------------
+Solution 65
+using System;
+
+interface IA
+{
+    void PrintA();
+}
+class A:IA
+{
+    public void PrintA()
+    {
+        Console.WriteLine("Class A Print Method");
+    }
+}
+interface IB
+{
+    void PrintB();
+}
+class B : IB
+{
+    public void PrintB()
+    {
+        Console.WriteLine("Class B Print Method");
+    }
+}
+class AB : IA,IB
+{
+    A a = new A();
+    B b = new B();
+    public void PrintA()
+    {
+        a.PrintA();
+    }
+    public void PrintB()
+    {
+        b.PrintB();
+    }
+}
+
+class Program
+{
+    public static void Main()
+    {
+        AB ab = new AB();
+        ab.PrintA();
+        ab.PrintB();
+        Console.ReadKey();
+    }
+}
+-----------------------------
+Solution 66
+using System;
+
+class Program
+{
+    public delegate void HelloFunctionDelegate(string Message);
+    public static void Hello(string strMessage)
+    {
+        Console.WriteLine(strMessage);
+    }
+
+    public static void Main()
+    {
+        HelloFunctionDelegate del = new HelloFunctionDelegate(Hello);
+        del("Hello from delegate");
+        Console.ReadKey();
+    }
+}
+--------------------------------
+Solution 67
+using System;
+using System.Collections.Generic;
+
+public class Employee
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+    public int Experience { get; set; }
+
+    public static void PromotedEmployee(List<Employee> employeesList)
+    {
+        foreach (Employee employee in employeesList)
+        {
+            if (employee.Experience >= 5)
+            {
+                Console.WriteLine(employee.Name + " promoted");
+            }
+        }
+    }
+}
+public class Program
+{
+    public static void Main()
+    {
+        List<Employee> empList = new List<Employee>();
+        empList.Add(new Employee() { ID = 101, Name = "Mary", Salary = 5000, Experience = 5 });
+        empList.Add(new Employee() { ID = 102, Name = "Mike", Salary = 4000, Experience = 4 });
+        empList.Add(new Employee() { ID = 104, Name = "John", Salary = 6000, Experience = 6 });
+        empList.Add(new Employee() { ID = 105, Name = "Todd", Salary = 3000, Experience = 3 });
+
+        Employee.PromotedEmployee(empList);
+        Console.ReadKey();        
+    }
+}
+----------------------------------------
+Solution 68
+using System;
+using System.Collections.Generic;
+
+public delegate bool IsPromotable(Employee emp);
+public class Employee
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+    public int Experience { get; set; }
+
+    public static void PromotedEmployee(List<Employee> employeesList, IsPromotable isPromotable)
+    {
+        foreach (Employee employee in employeesList)
+        {
+            if (isPromotable(employee))
+            {
+                Console.WriteLine(employee.Name + " promoted");
+            }
+        }
+    }
+}
+public class Program
+{
+    public static void Main()
+    {
+        List<Employee> empList = new List<Employee>();
+        empList.Add(new Employee() { ID = 101, Name = "Mary", Salary = 5000, Experience = 5 });
+        empList.Add(new Employee() { ID = 102, Name = "Mike", Salary = 4000, Experience = 4 });
+        empList.Add(new Employee() { ID = 104, Name = "John", Salary = 6000, Experience = 6 });
+        empList.Add(new Employee() { ID = 105, Name = "Todd", Salary = 3000, Experience = 3 });
+
+
+        IsPromotable promote = new IsPromotable(Promotable);
+        Employee.PromotedEmployee(empList, promote);
+        Console.ReadKey();        
+    }
+    public static bool Promotable(Employee emp)
+    {
+        if (emp.Experience >= 5)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+-------------------------------------------------------
+Solution 69
+using System;
+using System.Collections.Generic;
+
+public delegate bool IsPromotable(Employee emp);
+public class Employee
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public int Salary { get; set; }
+    public int Experience { get; set; }
+
+    public static void PromotedEmployee(List<Employee> employeesList, IsPromotable isPromotable)
+    {
+        foreach (Employee employee in employeesList)
+        {
+            if (isPromotable(employee))
+            {
+                Console.WriteLine(employee.Name + " promoted");
+            }
+        }
+    }
+}
+public class Program
+{
+    public static void Main()
+    {
+        List<Employee> empList = new List<Employee>();
+        empList.Add(new Employee() { ID = 101, Name = "Mary", Salary = 5000, Experience = 5 });
+        empList.Add(new Employee() { ID = 102, Name = "Mike", Salary = 4000, Experience = 4 });
+        empList.Add(new Employee() { ID = 104, Name = "John", Salary = 6000, Experience = 6 });
+        empList.Add(new Employee() { ID = 105, Name = "Todd", Salary = 3000, Experience = 3 });
+        
+        Employee.PromotedEmployee(empList, emp => emp.Experience >= 5);
+        Console.ReadKey();        
+    }
+}
+----------------------------------------------
+Solution 70
+using System;
+
+public delegate void SampleDelegate();
+class Program
+{
+    public static void SampleMethodOne()
+    {
+        Console.WriteLine("Sample Method One");
+    }
+    public static void SampleMethodTwo()
+    {
+        Console.WriteLine("Sample Method Two");
+    }
+    public static void SampleMethodThree()
+    {
+        Console.WriteLine("Sample Method Three");
+    }
+
+    public static void Main()
+    {
+        SampleDelegate del1 = new SampleDelegate(SampleMethodOne);
+        SampleDelegate del2 = new SampleDelegate(SampleMethodTwo);
+        SampleDelegate del3 = new SampleDelegate(SampleMethodThree);
+        SampleDelegate del = del1 + del2 + del3;
+        del();
+        Console.ReadKey();
+    }
+}
+--------------------------------
+Solution 71
+using System;
+
+public delegate void SampleDelegate();
+class Program
+{
+    public static void SampleMethodOne()
+    {
+        Console.WriteLine("Sample Method One");
+    }
+    public static void SampleMethodTwo()
+    {
+        Console.WriteLine("Sample Method Two");
+    }
+    public static void SampleMethodThree()
+    {
+        Console.WriteLine("Sample Method Three");
+    }
+
+    public static void Main()
+    {
+        SampleDelegate del = new SampleDelegate(SampleMethodOne);
+        del += SampleMethodTwo;
+        del += SampleMethodThree;
+        del();
+        Console.ReadKey();
+    }
+}
+---------------------------
+Solution 72
+using System;
+class Program
+{
+    public delegate int SampleDelegate();
+    public static void Main()
+    {
+        SampleDelegate del = new SampleDelegate(SampleMethodOne);
+        del += SampleMethodTwo;
+        int i = del();
+        Console.WriteLine("The value of returned value is {0}.", i);
+        Console.ReadKey();
+    }
+
+    public static int SampleMethodOne()
+    {
+        return 1;
+    }
+    public static int SampleMethodTwo()
+    {
+        return 2;
+    }
+}
+----------------------------------------------
+Solution 73
+using System;
+class Program
+{
+    public delegate void SampleDelegate(out int Integer);
+    public static void Main()
+    {
+        SampleDelegate del = new SampleDelegate(SampleMethodOne);
+        del += SampleMethodTwo;
+        int DelegateOutputParamValue = -1;
+        del(out DelegateOutputParamValue);
+        Console.WriteLine("The value of returned value is {0}.", DelegateOutputParamValue);
+        Console.ReadKey();
+    }
+
+    public static void SampleMethodOne(out int Number)
+    {
+        Number = 1;
+    }
+    public static void SampleMethodTwo(out int Number)
+    {
+        Number = 2;
+    }
+}
+-----------------------------------------
+Solution 74
+using System;
+public class Employee
+{
+    public string Name { get; set; }
+    public int Gender { get; set; }
+}
+class Program
+{
+    public static void Main()
+    {
+        Employee[] employees = new Employee[3];
+        employees[0] = new Employee { Name = "Tom", Gender = 1 };
+        employees[1] = new Employee { Name = "Nancy", Gender = 2 };
+        employees[2] = new Employee { Name = "Tony", Gender = 0 };
+
+        foreach(Employee emp in employees)
+        {
+            Console.WriteLine("Employee Name is {0} && Gender is {1}", emp.Name,GetGender(emp.Gender));
+        }
+        Console.ReadKey();
+    }
+
+    public static string GetGender(int Gender)
+    {
+        switch (Gender)
+        {
+            case 1:
+                return "Male";
+            case 2:
+                return "Female";
+            case 0:
+                return "Unknown";
+            default:
+                return "Invalid Gender";
+        }
+    }
+}
+------------------------------
+Solution 75
+using System;
+public class Employee
+{
+    public string Name { get; set; }
+    public Gender Gender { get; set; }
+}
+public enum Gender
+{
+    Male,
+    Female,
+    Unknown
+}
+class Program
+{
+    public static void Main()
+    {
+        Employee[] employees = new Employee[3];
+        employees[0] = new Employee { Name = "Tom",Gender = Gender.Male };
+        employees[1] = new Employee { Name = "Nancy", Gender = Gender.Female};
+        employees[2] = new Employee { Name = "Tony", Gender = Gender.Unknown };
+
+        foreach(Employee emp in employees)
+        {
+            Console.WriteLine("Employee Name is {0} && Gender is {1}", emp.Name,GetGender(emp.Gender));
+        }
+        Console.ReadKey();
+    }
+
+    public static string GetGender(Gender gender)
+    {
+        switch (gender)
+        {
+            case Gender.Male:
+                return "Male";
+            case Gender.Female:
+                return "Female";
+            case Gender.Unknown:
+                return "Unknown";
+            default:
+                return "Invalid Gender";
+        }
+    }
+}
+-------------------------------
+Solution 76
+using System;
+class Program
+{
+    public static void Main()
+    {
+        int[] Values=(int[])Enum.GetValues(typeof(Gender));
+
+        foreach(int value in Values)
+        {
+            Console.WriteLine(value);
+        }
+
+        string[] Names = Enum.GetNames(typeof(Gender));
+        foreach(string name in Names)
+        {
+            Console.WriteLine(name);
+        }
+        Console.ReadKey();
+    }
+
+    public enum Gender
+    {
+        Unknown,
+        Male,
+        Female
+    }
+}
+-------------------------
+Solution 77
+using System;
+class Program
+{
+    public static void Main()
+    {
+        short[] Values=(short[])Enum.GetValues(typeof(Gender));
+
+        foreach(short value in Values)
+        {
+            Console.WriteLine(value);
+        }
+        Console.ReadKey();
+    }
+
+    public enum Gender:short
+    {
+        Unknown=5,
+        Male=8,
+        Female
+    }
+}
+------------------------------------
+Solution 78
+using System;
+class Customer
+{
+    private string _firstName;
+    private string _lastName;
+
+    public string FirstName
+    {
+        get{ return this._firstName; }
+        set{ this._firstName = value; }
+    }
+    public string LastName {
+        get { return this._lastName; }
+        set { this._lastName = value; }
+    }
+    public void PrintFullName()
+    {
+        Console.WriteLine("Your fullname is {0} {1}", this._firstName, this._lastName);
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        Customer C1 = new Customer();
+        C1.FirstName = "Kumar";
+        C1.LastName = "Saurav";
+        C1.PrintFullName();
+        Console.ReadKey();
+    }
+}
+---------------------------------
+Solution 79
+using System;
+class Customer
+{
+    #region Fields
+    private string _firstName;
+    private string _lastName;
+    #endregion
+
+    #region Properties
+    public string FirstName
+    {
+        get{ return this._firstName; }
+        set{ this._firstName = value; }
+    }
+    public string LastName {
+        get { return this._lastName; }
+        set { this._lastName = value; }
+    }
+    #endregion
+
+    #region Methods
+    public void PrintFullName()
+    {
+        Console.WriteLine("Your fullname is {0} {1}", this._firstName, this._lastName);
+    }
+    #endregion
+}
+class Program
+{
+    #region Main Method
+    public static void Main()
+    {
+        Customer C1 = new Customer();
+        C1.FirstName = "Kumar";
+        C1.LastName = "Saurav";
+        C1.PrintFullName();
+        Console.ReadKey();
+    }
+    #endregion
+}
+------------------------------
+Solution 80
+using System;
+class Customer
+{
+    protected int Id;
+}
+class CorporateCustomer:Customer
+{
+    public void Print()
+    {
+        Id = 101;
+        Console.WriteLine("Id is {0}.", Id);
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        CorporateCustomer CC = new CorporateCustomer();
+        CC.Print();
+        Console.ReadKey();
+    }
+}
+----------------------------
